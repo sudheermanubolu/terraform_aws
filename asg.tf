@@ -1,6 +1,6 @@
 
 resource "aws_launch_configuration" "movies_web" {
-  image_id        = "ami-001a5854c8627a5b7"
+  image_id        = "ami-022a957fb0b3bad0a"
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.movies.id]
   key_name        = aws_key_pair.terraform.key_name
