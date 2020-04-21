@@ -1,4 +1,10 @@
 
+#Instead of allowing AWS to create a random key, we pass the public key that we want to use.
+resource "aws_key_pair" "terraform" {
+  key_name   = "terraform"
+  public_key = file("./terraform.pub")
+}
+
 resource "aws_launch_configuration" "movies_web" {
   image_id        = "ami-022a957fb0b3bad0a"
   instance_type   = "t2.micro"
