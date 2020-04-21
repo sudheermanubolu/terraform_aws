@@ -87,3 +87,26 @@ resource "aws_security_group" "elb" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+####################################
+#######Security Group for EFS#######
+####################################
+
+##security group for EFS to allow port 2049 ingress and all egress traffic
+resource "aws_security_group" "efs" {
+  name        = "efs-sg"
+  vpc_id      = aws_vpc.main.id
+  description = "Security group for EFS"
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    from_port   = 2049
+    to_port     = 2049
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.0.0/16"]
+  }
+}
