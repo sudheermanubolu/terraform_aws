@@ -13,11 +13,13 @@ resource "aws_launch_configuration" "movies_web" {
 }
 
 resource "aws_autoscaling_group" "movies_asg" {
-  launch_configuration = aws_launch_configuration.movies_web.id
-  vpc_zone_identifier  = [aws_subnet.main-public-1.id, aws_subnet.main-public-2.id, aws_subnet.main-public-3.id]
-  load_balancers       = [aws_elb.movies.name]
-  min_size             = 2
-  max_size             = 10
+  launch_configuration      = aws_launch_configuration.movies_web.id
+  vpc_zone_identifier       = [aws_subnet.main-public-1.id, aws_subnet.main-public-2.id, aws_subnet.main-public-3.id]
+  load_balancers            = [aws_elb.movies.name]
+  min_size                  = 2
+  max_size                  = 10
+  health_check_grace_period = 300
+  health_check_type         = "ELB"
   tags = [{
     key                 = "Name"
     value               = "terraform-asg-movies"

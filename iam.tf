@@ -21,10 +21,6 @@ resource "aws_iam_user_login_profile" "profile" {
   password_reset_required = "true"
 }
 
-output "this_iam_user_arn" {
-  description = "The ARN assigned by AWS for this user"
-  value       = element(concat(aws_iam_user.users.*.arn, [""]), 0)
-}
 /*by Default as a best secured way, terraform will not allow to set password from code. 
 A random generated password and enable password_reset_required, so user will change password when user login for first time.
 as a result of output command, an encrypted password will be displayed on screen and can be decrypted by below command. This need GPG public key.

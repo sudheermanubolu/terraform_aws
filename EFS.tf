@@ -25,7 +25,5 @@ resource "aws_efs_mount_target" "efs_mount_sub3" {
   security_groups = [aws_security_group.efs.id]
 }
 
-output "aws_efs_file_system" {
-  value = aws_efs_file_system.efs.id
-}
+
 

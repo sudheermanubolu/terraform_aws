@@ -19,6 +19,4 @@ resource "aws_elb" "movies" {
   }
 }
 
-output "elb_dns_name" {
-  value = "${aws_elb.movies.dns_name}"
-}
+
