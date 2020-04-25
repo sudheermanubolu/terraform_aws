@@ -35,7 +35,6 @@ Terraform code to deploy a frontend application with MySQL DB on AWS. The code d
 - Email budget alerts
 - SNS topic for Mobile and Email Alerts
 - CloudWatch for CPU and Alerting with SNS
--
 
 ## Installation
 
