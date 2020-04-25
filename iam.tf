@@ -1,9 +1,3 @@
-/*
-provider "aws" {
-  profile = "default"
-  region  = "us-east-2"
-}
-*/
 
 resource "aws_iam_user" "users" {
   name          = "profbob"

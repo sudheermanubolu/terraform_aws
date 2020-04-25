@@ -12,3 +12,4 @@ output "elb_dns_name" {
   description = "ELB name created: "
   value       = "${aws_elb.movies.dns_name}"
 }
+
