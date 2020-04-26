@@ -38,7 +38,23 @@ Terraform code to deploy a frontend application with MySQL DB on AWS. The code d
 
 ## Installation
 
+Before proceedind with below aws tokens should be updated for your account that is having full access. Educational accounts will work with this.
+
+eg:
+
 ```
+cat ~/.aws/credentials
+[default]
+aws_access_key_id = AxxxxxxxxA
+aws_secret_access_key = axxxxxxxxxa
+```
+
+once account is configured, proceed with below
+
+```
+git clone https://github.com/sudheermanubolu/terraform_aws.git
+cd terraform_aws
+terraform init
 terraform plan
 terraform apply
 ```
