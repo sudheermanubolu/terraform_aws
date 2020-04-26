@@ -43,4 +43,4 @@ terraform plan
 terraform apply
 ```
 
-For more details on Terraform check docs at [DOCS](https://www.terraform.io/docs/providers/aws/)
+For more details on Terraform check [DOCS](https://www.terraform.io/docs/providers/aws/)
