@@ -5,6 +5,7 @@ resource "aws_key_pair" "terraform" {
   public_key = file("./terraform.pub")
 }
 
+#Launch config that will be applied to EC2 instances when they get created.
 resource "aws_launch_configuration" "movies_web" {
   image_id        = "ami-0f26a052a49d63163"
   instance_type   = "t2.micro"
@@ -12,6 +13,7 @@ resource "aws_launch_configuration" "movies_web" {
   key_name        = aws_key_pair.terraform.key_name
 }
 
+# ASG creation for movies ELB.
 resource "aws_autoscaling_group" "movies_asg" {
   launch_configuration      = aws_launch_configuration.movies_web.id
   vpc_zone_identifier       = [aws_subnet.main-public-1.id, aws_subnet.main-public-2.id, aws_subnet.main-public-3.id]
