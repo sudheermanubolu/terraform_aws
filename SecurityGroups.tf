@@ -1,5 +1,5 @@
 ####################################
-##Security Group for EC2 instances##
+#######Security Group for ASG#######
 ####################################
 
 #Create Security group
