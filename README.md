@@ -38,7 +38,7 @@ Terraform code to deploy a frontend application with MySQL DB on AWS. The code d
 
 ## Installation
 
-Before proceedind with below aws tokens should be updated for your account that is having full access. Educational accounts will work with this.
+Before proceedind with below aws tokens should be updated for your account that is having full access. AWS Educational accounts will NOT work with this.
 
 eg:
 
