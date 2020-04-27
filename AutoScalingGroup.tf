@@ -7,7 +7,7 @@ resource "aws_key_pair" "terraform" {
 
 #Launch config that will be applied to EC2 instances when they get created.
 resource "aws_launch_configuration" "movies_web" {
-  image_id        = "ami-0f26a052a49d63163"
+  image_id        = "ami-0d5b8fbae62bdebac"
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.movies.id]
   key_name        = aws_key_pair.terraform.key_name
